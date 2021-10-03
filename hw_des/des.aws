@@ -1,0 +1,12 @@
+[Version]
+Version=7.3
+[Designs]
+des=.\des\des.adf
+[Expand]
+des=1
+[Browser]
+sort=order
+mode=asc
+[Order]
+order=1
+macro=

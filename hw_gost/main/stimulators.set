@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<XML>
+ <document type="stimulators" version="1">
+  <set name="ASDB Stimulators" active="0"/>
+  <set name="ASDB Stimulators ( Waveform Editor 1.awf )" active="0">
+   <stimulator>
+    <signal_path value="last_round_en"/>
+    <rawdescription value="FRM:FRM:Override:0 0 ns, 1 320 ns -r 330 ns:Formula:1:"/>
+   </stimulator>
+   <stimulator>
+    <signal_path value="round_key"/>
+    <rawdescription value="FRM:FRM:Override:16#00000000 0 ns, 16#773F05C3 10 ns, 16#58E9C3F9 20 ns, 16#801F3EA6 30 ns, 16#04A35C6E 40 ns, 16#9CCBF884 50 ns, 16#B9E788B8 60 ns, 16#0DB296AE 70 ns, 16#39AFAD62 80 ns, 16#773F05C3 90 ns, 16#58E9C3F9 100 ns, 16#801F3EA6 110 ns, 16#04A35C6E 120 ns, 16#9CCBF884 130 ns, 16#B9E788B8 140 ns, 16#0DB296AE 150 ns, 16#39AFAD62 160 ns, 16#773F05C3 170 ns, 16#58E9C3F9 180 ns, 16#801F3EA6 190 ns, 16#04A35C6E 200 ns, 16#9CCBF884 210 ns, 16#B9E788B8 220 ns, 16#0DB296AE 230 ns, 16#39AFAD62 240 ns, 16#39AFAD62 250 ns, 16#0DB296AE 260 ns, 16#B9E788B8 270 ns, 16#9CCBF884 280 ns, 16#04A35C6E 290 ns, 16#801F3EA6 300 ns, 16#58E9C3F9 310 ns, 16#773F05C3 320 ns -r 330 ns:Formula:1:"/>
+   </stimulator>
+  </set>
+  <set name="ASDB Stimulators ( main_test.awf )" active="1">
+   <stimulator>
+    <signal_path value="data_in"/>
+    <rawdescription value="FRM:FRM:Override:16#2A7365637265762A 0 ns, 16#02FB42FF25277A2C 340 ns:Formula:1:"/>
+   </stimulator>
+   <stimulator>
+    <signal_path value="data_out_en"/>
+    <rawdescription value="FRM:FRM:Override:0 0 ns, 1 325 ns -r 335 ns:Formula:1:"/>
+   </stimulator>
+   <stimulator>
+    <signal_path value="init_load_en"/>
+    <rawdescription value="FRM:FRM:Override:1 0 ns, 0 10 ns -r 340 ns:Formula:1:"/>
+   </stimulator>
+   <stimulator>
+    <signal_path value="last_round_en"/>
+    <rawdescription value="FRM:FRM:Override:0 0 ns, 1 320 ns -r 330 ns:Formula:1:"/>
+   </stimulator>
+   <stimulator>
+    <signal_path value="round_clk"/>
+    <rawdescription value="CLK:FRM:Override:10.000000;2;1;0;50;1:Clock:1:"/>
+   </stimulator>
+   <stimulator>
+    <signal_path value="round_key"/>
+    <rawdescription value="FRM:FRM:Override:16#00000000 0 ns, 16#773F05C3 10 ns, 16#58E9C3F9 20 ns, 16#801F3EA6 30 ns, 16#04A35C6E 40 ns, 16#9CCBF884 50 ns, 16#B9E788B8 60 ns, 16#0DB296AE 70 ns, 16#39AFAD62 80 ns, 16#773F05C3 90 ns, 16#58E9C3F9 100 ns, 16#801F3EA6 110 ns, 16#04A35C6E 120 ns, 16#9CCBF884 130 ns, 16#B9E788B8 140 ns, 16#0DB296AE 150 ns, 16#39AFAD62 160 ns, 16#773F05C3 170 ns, 16#58E9C3F9 180 ns, 16#801F3EA6 190 ns, 16#04A35C6E 200 ns, 16#9CCBF884 210 ns, 16#B9E788B8 220 ns, 16#0DB296AE 230 ns, 16#39AFAD62 240 ns, 16#39AFAD62 250 ns, 16#0DB296AE 260 ns, 16#B9E788B8 270 ns, 16#9CCBF884 280 ns, 16#04A35C6E 290 ns, 16#801F3EA6 300 ns, 16#58E9C3F9 310 ns, 16#773F05C3 320 ns -r 330 ns:Formula:1:"/>
+   </stimulator>
+  </set>
+ </document>
+</XML>

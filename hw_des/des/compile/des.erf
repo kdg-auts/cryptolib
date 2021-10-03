@@ -1,0 +1,5 @@
+WARNING DAGGEN_0523: "The source is compiled without the -dbg switch. Line breakpoints, code coverage, and assertion debug will not be available." 
+MESSAGE "File: .\CipherControl.vhd" 
+MESSAGE "Compile Entity "CipherControl"" 
+MESSAGE "Compile Architecture "CipherControl_arch" of Entity "CipherControl"" 
+SUCCESS "Compile success 0 Errors 0 Warnings  Analysis time :  0.4 [s]" 

@@ -1,0 +1,1 @@
+-w -s "D:\Appdata\active_hdl_designs\CRYPTOLIBRARY\des\library.cfg"  -j "D:\Appdata\active_hdl_designs\CRYPTOLIBRARY\des\des\projlib.cfg"  -d "D:\Appdata\active_hdl_designs\CRYPTOLIBRARY\des\des\compile"   -work des  -O3 -e 100 -2002 "D:\Appdata\active_hdl_designs\CRYPTOLIBRARY\des\des\compile\CipherControl.vhd"

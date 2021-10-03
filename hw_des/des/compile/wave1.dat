@@ -1,0 +1,102 @@
+$WAVE4TIMED
+$RESOLUTION 1000
+I 1 "c#9#std_logicc9 UX01ZWLH-"
+$IN 1 1 CLK
+$IN 2 1 DR
+$IN 3 1 RST
+$OUT 4 1 DTO
+$OUT 5 1 FR
+$OUT 6 1 KCLK
+$OUT 7 1 RCLK
+$OUT 8 1 SHE
+$OUT 9 1 SHS
+I 2 "c#10#Sreg0_types18 drd r1 r2 r3 r4 r5 r6 r7 r8 r9 r10 r11 r12 r13 r14 r15 r16 x "
+$S +1 2 Sreg0
+$ENDTIME 100000
+$WAVES 3
+=0 T 0
+$VALUES
+V 1
+0
+$END
+$WAVES 4
+*0
+=1 D 0 1
+$VALUES
+V 2
+U
+0
+$END
+$WAVES 5
+*0
+*1
+=2 D 5k 2
+$VALUES
+V 3
+U
+1
+0
+$END
+$WAVES 1
+*0
+R 1 20 =3 T 5k
+$VALUES
+R 2 10 0 1
+V 1
+0
+$END
+$WAVES 8
+*0
+*1
+*2
+$VALUES
+V 3
+U
+0
+1
+$END
+$WAVES 2
+*0
+R 1 2 =4 T 10k
+$VALUES
+V 3
+0
+1
+0
+$END
+$WAVES 9
+*0
+*1
+=5 D 25k 2
+=6 D 60k 2
+=7 D 10k 2
+$VALUES
+V 1
+U
+R 2 2 0 1
+$END
+$WAVES 6 7
+*0
+$VALUES
+V 1
+U
+$END
+$WAVES +3
+*0
+=8 D 5k 1
+R 1 9 =9 D 10k 1
+$VALUES
+V 11
+drd
+r1
+r2
+r3
+r4
+r5
+r6
+r7
+r8
+r9
+r10
+$END
+$ENDWAVE
