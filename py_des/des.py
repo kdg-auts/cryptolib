@@ -15,7 +15,7 @@ PI = [58, 50, 42, 34, 26, 18, 10, 2,
       63, 55, 47, 39, 31, 23, 15, 7]
 
 
-# Final permutation (IP^-1) for cipherblock after the 16 rounds
+# Final permutation (IP**-1) for cipherblock after the 16 rounds
 PI_1 = [40, 8, 48, 16, 56, 24, 64, 32,
         39, 7, 47, 15, 55, 23, 63, 31,
         38, 6, 46, 14, 54, 22, 62, 30,
@@ -115,7 +115,7 @@ P = [16, 7, 20, 21, 29, 12, 28, 17,
 # Subkey blocks shift before each round key generation
 SHIFT = [1,1,2,2,2,2,2,2,1,2,2,2,2,2,2,1]
 
-# Convert a string into a list of bits -- only latin, digits and simple symbols
+# Convert a string into an array of bits (list of int) -- only latin, digits and simple symbols allowed!
 def string_to_bit_array(text):
     array = list()
     for char in text:
@@ -123,7 +123,7 @@ def string_to_bit_array(text):
         array.extend([int(x) for x in list(binval)]) # add bits to the final list
     return array
 
-# Recreate the string from the bit array
+# Recreate a string from array of bits (list of int)
 def bit_array_to_string(array): 
     res = ''.join([chr(int(y,2)) for y in [''.join([str(x) for x in _bytes]) for _bytes in  nsplit(array,8)]])   
     return res
@@ -181,45 +181,97 @@ class des():
             raise ValueError("Data size in bytes should be multiple of 8! Use padding=True option!")
         else:
             self.message = message
-        text_blocks = nsplit(self.message, 8) # split the text in blocks of 8 bytes so 64 bits
+        chunk_set = nsplit(self.message, 8) # split the message into chunks of 8 bytes (64 bits)
         
-        # prepare result container
-        result = list()
+        # prepare result containers: for round chunk (array of bits) and entire message (string)
+        round_result = list()
+        final_result = ""
         
-        # loop over all the blocks of data
-        for block in text_blocks:
-            block = string_to_bit_array(block)#Convert the block in bit array
-            block = self.permute(block,PI)#Apply the initial permutation
-            g, d = nsplit(block, 32) #g(LEFT), d(RIGHT)
-            tmp = None
-            for i in range(16): #Do the 16 rounds
-                d_e = self.expand(d, E) #Expand d to match Ki size (48bits)
+        # DEBUG
+        DBG_chunk_i = 1
+
+        # loop over all the chunks of message
+        for chunk in chunk_set:
+            
+            if DEBUG == True:
+                print(f"## BEGIN PROCESSING CHUNK {DBG_chunk_i}/{len(chunk_set)} ##")
+                print("chunk value =", ":".join("{:02x}".format(ord(symb)) for symb in chunk))
+            
+            chunk = string_to_bit_array(chunk) # convert the chunk data (string) into array of bits (list of int)
+            chunk = self.permute(chunk, PI) # apply the initial permutation
+            
+            if DEBUG == True:
+                chunk_str = bit_array_to_string(chunk)
+                print("IP_PERM =", ":".join("{:02x}".format(ord(symb)) for symb in chunk_str))
+            
+            left_half, right_half = nsplit(chunk, 32) # split data state into left half (LH) and right half (RH)
+            
+            if DEBUG == True:
+                left_half_str = bit_array_to_string(left_half)
+                right_half_str = bit_array_to_string(right_half)
+                print("[L0][R0] =", ":".join("{:02x}".format(ord(symb)) for symb in left_half_str), "=", ":".join("{:02x}".format(ord(symb)) for symb in right_half_str))
+            
+            tmp = None # data value processed in round Functon
+            
+            # cycle over all 16 rounds
+            for i in range(16):
+                if DEBUG == True:
+                    print(f"## ROUND {i+1} ##")
+                # 1) round Function
+                right_half_expanded = self.expand(right_half, E) # expand RH to match Ki size (48 bits)
                 if action == ENCRYPT:
-                    tmp = self.xor(self.roundkeys[i], d_e)#If encrypt use Ki
+                    tmp = self.xor(self.roundkeys[i], right_half_expanded) # if ENCRYPT - use round keys in natural order
                 else:
-                    tmp = self.xor(self.roundkeys[15-i], d_e)#If decrypt start by the last key
-                tmp = self.substitute(tmp) #Method that will apply the SBOXes
-                tmp = self.permute(tmp, P)
-                tmp = self.xor(g, tmp)
-                g = d
-                d = tmp
-            result += self.permute(d+g, PI_1) #Do the last permut and append the result to result
-        final_res = bit_array_to_string(result)
-        if padding and action==DECRYPT:
-            return self.removePadding(final_res) #Remove the padding if decrypt and padding is true
+                    tmp = self.xor(self.roundkeys[15-i], right_half_expanded) # if DECRYPT - use round keys in reverse order
+                if DEBUG == True:
+                    RE_str = bit_array_to_string(right_half_expanded)
+                    Ki_str = bit_array_to_string(self.roundkeys[i] if action == ENCRYPT else self.roundkeys[15-i])
+                    SBI_str = bit_array_to_string(tmp)
+                    print("E(R) =", ":".join("{:02x}".format(ord(symb)) for symb in RE_str))
+                    print(f"K{i+1} =", ":".join("{:02x}".format(ord(symb)) for symb in Ki_str))
+                    print("SB_IN =", ":".join("{:02x}".format(ord(symb)) for symb in SBI_str))
+                tmp = self.substitute(tmp) # substitution using S-Boxes
+                if DEBUG == True:
+                    SBO_str = bit_array_to_string(tmp)
+                    print("SB_OUT =", ":".join("{:02x}".format(ord(symb)) for symb in SBO_str))
+                tmp = self.permute(tmp, P) # permutation P after substitution
+                if DEBUG == True:
+                    P_str = bit_array_to_string(tmp)
+                    print("P(SBO) =", ":".join("{:02x}".format(ord(symb)) for symb in P_str))
+                tmp = self.xor(left_half, tmp)
+                # 2) swap halves
+                left_half = right_half
+                right_half = tmp
+                if DEBUG == True:
+                    left_half_str = bit_array_to_string(left_half)
+                    right_half_str = bit_array_to_string(right_half)
+                    print(f"[L{i+1}][R{i+1}] =", ":".join("{:02x}".format(ord(symb)) for symb in left_half_str), "=", ":".join("{:02x}".format(ord(symb)) for symb in right_half_str))
+            # perform final permutation and append processed chunk to result container
+            round_result = self.permute(right_half + left_half, PI_1) 
+            final_result += bit_array_to_string(round_result)
+            
+            if DEBUG == True:
+                round_result_str = bit_array_to_string(round_result)
+                print("IP_INV =", ":".join("{:02x}".format(ord(symb)) for symb in round_result_str))
+                print(f"## END PROCESSING CHUNK {DBG_chunk_i}/{len(chunk_set)} ##")
+                DBG_chunk_i += 1
+        
+        if padding and action == DECRYPT:
+            return self.removePadding(final_result) # remove the padding in decrypted plaintext
         else:
-            return final_res #Return the final string of data ciphered/deciphered
+            return final_result # return the final string of data ciphered/deciphered
     
-    def substitute(self, d_e):#Substitute bytes using SBOX
-        subblocks = nsplit(d_e, 6)#Split bit array into sublist of 6 bits
-        result = list()
-        for i in range(len(subblocks)): #For all the sublists
+    # nonlinear substitution using predefined S-Boxes
+    def substitute(self, datablock48):
+        subblocks = nsplit(datablock48, 6) # split bit array of 48 bits into 8 subarrays of 6 bits
+        result = list() # list of 32 result bits
+        for i in range(len(subblocks)): # loop over all 8 subarrays
             block = subblocks[i]
-            row = int(str(block[0])+str(block[5]),2)#Get the row with the first and last bit
-            column = int(''.join([str(x) for x in block[1:][:-1]]),2) #Column is the 2,3,4,5th bits
-            val = S_BOX[i][row][column] #Take the value in the SBOX appropriated for the round (i)
-            bin = binvalue(val, 4)#Convert the value to binary
-            result += [int(x) for x in bin]#And append it to the resulting list
+            row = int(str(block[0]) + str(block[5]), 2) # get row number as first and last bit concatenated
+            column = int(''.join([str(x) for x in block[1:][:-1]]), 2) # get column number as bits [2,3,4,5] 
+            val = S_BOX[i][row][column] # pick the output value from S-Box LUT using row and column numbers
+            bin = binvalue(val, 4) # convert the value (int) to binary string
+            result += [int(x) for x in bin] # convert binary string to array of bits and append it to the resulting list
         return result
 
     # generic method to perform PERMUTATION according to specified table
@@ -242,8 +294,8 @@ class des():
         C, D = nsplit(key, 28) # split keystate to C (LEFT) and D (RIGHT) halves
         for i in range(16): # get all 16 roundkeys
             C, D = self.shift(C, D, SHIFT[i]) # perform left shift for 1 or 2 bits depending on current round
-            #tmp = C + D # merge keystate halves
-            self.roundkeys.append(self.permute(C + D, CP_2)) # perform roundkey permutation PC2 and get Ki
+            tmp = C + D # merge keystate halves
+            self.roundkeys.append(self.permute(tmp, CP_2)) # perform roundkey permutation PC2 and get Ki
 
     # left shift each in a couple of lists by given value
     def shift(self, C, D, n): 
@@ -260,21 +312,26 @@ class des():
         pad_len = ord(data[-1])
         return data[:-pad_len]
     
-    def encrypt(self, key, text, padding=False):
+    # wrapper over algorithm main routine to perform ENCRYPTION
+    def encrypt(self, key, text, padding = False):
         return self.run(key, text, ENCRYPT, padding)
     
-    def decrypt(self, key, text, padding=False):
+    # wrapper over algorithm main routine to perform DECRYPTION
+    def decrypt(self, key, text, padding = False):
         return self.run(key, text, DECRYPT, padding)
     
 if __name__ == '__main__':
-    # default key
+    # default key: if longer than 8 bytes - will be truncated (9th and higher bytes will be discarded)
     key = "very_top_secret_key"
-    # default opentext
-    defaulttext= "Hello world! It's a secret conidential message  "
+    # default opentext: should have 8-bytes-multiply length or use padding=True option in encrypt and decrypt methods
+    defaulttext = "Hello world! It's a secret conidential message  "
     # init DES class
     d = des()
-    ciphertext = d.encrypt(key,defaulttext)
-    checktext = d.decrypt(key,ciphertext)
+    # perform ENCRYPTION
+    ciphertext = d.encrypt(key, defaulttext)
+    # perform DECRYPTION
+    checktext = d.decrypt(key, ciphertext)
+    # output results
     print("Ciphered: %r" % ciphertext)
     print(":".join("{:02x}".format(ord(symb)) for symb in ciphertext))
     print("Deciphered:", checktext)
