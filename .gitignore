@@ -126,4 +126,23 @@ venv.bak/
 dmypy.json
 
 # Pyre type checker
-.pyre/
+log/*
+*.mgf
+*.wsw
+*.erf
+*.lib~des
+*.cmd
+*.epr
+*.bdeid
+*.cfg
+*.bdeid
+*.sth
+*.LIB
+*.rlb
+*.wsp
+*.ini
+*.set
+*.htm
+*.bak
+*.set
+*.order
