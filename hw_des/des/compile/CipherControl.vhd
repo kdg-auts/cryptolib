@@ -7,9 +7,9 @@
 --
 -------------------------------------------------------------------------------
 --
--- File        : D:\Appdata\active_hdl_designs\CRYPTOLIBRARY\des\des\compile\CipherControl.vhd
--- Generated   : 10/03/21 22:11:59
--- From        : D:\Appdata\active_hdl_designs\CRYPTOLIBRARY\des\des\src\CipherControl.asf
+-- File        : D:\cryptolib\hw_des\des\compile\CipherControl.vhd
+-- Generated   : 12/23/21 00:46:04
+-- From        : D:\cryptolib\hw_des\des\src\CipherControl.asf
 -- By          : FSM2VHDL ver. 5.0.7.2
 --
 -------------------------------------------------------------------------------
