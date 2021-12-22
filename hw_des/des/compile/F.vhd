@@ -7,9 +7,9 @@
 --
 -------------------------------------------------------------------------------
 --
--- File        : d:\appdata\acthdl_designs\des\des\compile\F.vhd
--- Generated   : Fri May 31 08:53:40 2013
--- From        : d:\appdata\acthdl_designs\des\des\src\Round_Function\F.bde
+-- File        : D:\cryptolib\hw_des\des\compile\f.vhd
+-- Generated   : Thu Dec 23 00:46:06 2021
+-- From        : D:\cryptolib\hw_des\des\src\round_function\f.bde
 -- By          : Bde2Vhdl ver. 2.6
 --
 -------------------------------------------------------------------------------
@@ -21,9 +21,6 @@
 library IEEE;
 use IEEE.std_logic_1164.all;
 
-
--- active library clause
-library des;
 
 entity F is
   port(

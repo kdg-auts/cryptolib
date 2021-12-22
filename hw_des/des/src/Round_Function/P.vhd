@@ -36,12 +36,21 @@ end P;
 
 architecture P of P is
 begin
-	PO <= PI(24)&PI(3)&PI(10)&PI(21)&PI(5)&PI(29)&PI(12)&PI(18)&PI(8)&PI(2)&PI(26)&PI(31)&PI(13)&PI(23)&PI(7)&PI(1)&PI(9)&PI(30)&PI(17)&PI(4)&PI(25)&PI(22)&PI(14)&PI(0)&PI(16)&PI(27)&PI(11)&PI(28)&PI(20)&PI(19)&PI(6)&PI(15);
-	
-                                                                                                                                                                                                         
-                                                        
-
-
-
-	
+--	PO <= 	PI(24)&PI(3)&PI(10)&PI(21)&
+--			PI(5)&PI(29)&PI(12)&PI(18)&
+--			PI(8)&PI(2)&PI(26)&PI(31)&
+--			PI(13)&PI(23)&PI(7)&PI(1)&
+--			PI(9)&PI(30)&PI(17)&PI(4)&
+--			PI(25)&PI(22)&PI(14)&PI(0)&
+--			PI(16)&PI(27)&PI(11)&PI(28)&
+--			PI(20)&PI(19)&PI(6)&PI(15);
+	PO <= 	PI(16)&PI(25)&PI(12)&PI(11)&
+			PI(3)&PI(20)&PI(04)&PI(15)&
+			PI(31)&PI(17)&PI(09)&PI(06)&
+			PI(27)&PI(14)&PI(01)&PI(22)&
+			PI(30)&PI(24)&PI(08)&PI(18)&
+			PI(00)&PI(05)&PI(29)&PI(23)&
+			PI(13)&PI(19)&PI(02)&PI(26)&
+			PI(10)&PI(21)&PI(28)&PI(07);	
+                                                                                                                                                                                                         	
 end P;
