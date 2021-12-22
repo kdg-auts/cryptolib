@@ -7,9 +7,9 @@
 --
 -------------------------------------------------------------------------------
 --
--- File        : D:\Appdata\active_hdl_designs\CRYPTOLIBRARY\des\des\compile\DES_MAIN.vhd
--- Generated   : Sun Oct  3 22:07:29 2021
--- From        : D:\Appdata\active_hdl_designs\CRYPTOLIBRARY\des\des\src\DES_MAIN.bde
+-- File        : D:\cryptolib\hw_des\des\compile\DES_MAIN.vhd
+-- Generated   : Thu Dec 23 00:53:42 2021
+-- From        : D:\cryptolib\hw_des\des\src\DES_MAIN.bde
 -- By          : Bde2Vhdl ver. 2.6
 --
 -------------------------------------------------------------------------------
@@ -22,10 +22,7 @@ library IEEE;
 use IEEE.std_logic_1164.all;
 
 
--- active library clause
-library des;
-
-entity DES_MAIN2 is
+entity DES_MAIN is
   port(
        CLK : in STD_LOGIC;
        DR : in STD_LOGIC;
@@ -34,9 +31,9 @@ entity DES_MAIN2 is
        KeyIN : in STD_LOGIC_VECTOR(63 downto 0);
        DataBlockOUT : out STD_LOGIC_VECTOR(63 downto 0)
   );
-end DES_MAIN2;
+end DES_MAIN;
 
-architecture DES_MAIN2 of DES_MAIN2 is
+architecture DES_MAIN of DES_MAIN is
 
 ---- Component declarations -----
 
@@ -71,14 +68,12 @@ end component;
 component IP
   port (
        DIN : in STD_LOGIC_VECTOR(63 downto 0);
-       DL : out STD_LOGIC_VECTOR(31 downto 0);
-       DR : out STD_LOGIC_VECTOR(31 downto 0)
+       DOUT : out STD_LOGIC_VECTOR(63 downto 0)
   );
 end component;
 component IP_INV
   port (
-       DL : in STD_LOGIC_VECTOR(31 downto 0);
-       DR : in STD_LOGIC_VECTOR(31 downto 0);
+       DIN : in STD_LOGIC_VECTOR(63 downto 0);
        DOUT : out STD_LOGIC_VECTOR(63 downto 0)
   );
 end component;
@@ -125,16 +120,14 @@ signal NET141 : STD_LOGIC;
 signal RCLK : STD_LOGIC;
 signal BUS101 : STD_LOGIC_VECTOR (31 downto 0);
 signal BUS169 : STD_LOGIC_VECTOR (31 downto 0);
-signal BUS42 : STD_LOGIC_VECTOR (31 downto 0);
-signal BUS75 : STD_LOGIC_VECTOR (31 downto 0);
-signal BUS79 : STD_LOGIC_VECTOR (31 downto 0);
-signal BUS81 : STD_LOGIC_VECTOR (31 downto 0);
-signal BUS83 : STD_LOGIC_VECTOR (31 downto 0);
-signal BUS87 : STD_LOGIC_VECTOR (31 downto 0);
 signal BUS89 : STD_LOGIC_VECTOR (31 downto 0);
 signal BUS97 : STD_LOGIC_VECTOR (31 downto 0);
 signal CurStateL : STD_LOGIC_VECTOR (31 downto 0);
 signal CurStateR : STD_LOGIC_VECTOR (31 downto 0);
+signal DI : STD_LOGIC_VECTOR (63 downto 0);
+signal DO : STD_LOGIC_VECTOR (63 downto 0);
+signal NewStateL : STD_LOGIC_VECTOR (31 downto 0);
+signal NewStateR : STD_LOGIC_VECTOR (31 downto 0);
 signal RoundKey : STD_LOGIC_VECTOR (47 downto 0);
 
 begin
@@ -144,15 +137,13 @@ begin
 U1 : IP
   port map(
        DIN => DataBlockIN,
-       DL => BUS42,
-       DR => BUS75
+       DOUT => DI
   );
 
 U10 : IP_INV
   port map(
-       DL => BUS87,
-       DOUT => DataBlockOUT,
-       DR => BUS83
+       DIN => DO,
+       DOUT => DataBlockOUT
   );
 
 U11 : CipherControl
@@ -177,18 +168,80 @@ U13 : F
 
 U2 : MUX32
   port map(
-       A => BUS42,
+       A(0) => DI(32),
+       A(1) => DI(33),
+       A(2) => DI(34),
+       A(3) => DI(35),
+       A(4) => DI(36),
+       A(5) => DI(37),
+       A(6) => DI(38),
+       A(7) => DI(39),
+       A(8) => DI(40),
+       A(9) => DI(41),
+       A(10) => DI(42),
+       A(11) => DI(43),
+       A(12) => DI(44),
+       A(13) => DI(45),
+       A(14) => DI(46),
+       A(15) => DI(47),
+       A(16) => DI(48),
+       A(17) => DI(49),
+       A(18) => DI(50),
+       A(19) => DI(51),
+       A(20) => DI(52),
+       A(21) => DI(53),
+       A(22) => DI(54),
+       A(23) => DI(55),
+       A(24) => DI(56),
+       A(25) => DI(57),
+       A(26) => DI(58),
+       A(27) => DI(59),
+       A(28) => DI(60),
+       A(29) => DI(61),
+       A(30) => DI(62),
+       A(31) => DI(63),
        B => BUS89,
        CS => NET141,
-       M => BUS81
+       M => NewStateL
   );
 
 U3 : MUX32
   port map(
-       A => BUS75,
+       A(0) => DI(0),
+       A(1) => DI(1),
+       A(2) => DI(2),
+       A(3) => DI(3),
+       A(4) => DI(4),
+       A(5) => DI(5),
+       A(6) => DI(6),
+       A(7) => DI(7),
+       A(8) => DI(8),
+       A(9) => DI(9),
+       A(10) => DI(10),
+       A(11) => DI(11),
+       A(12) => DI(12),
+       A(13) => DI(13),
+       A(14) => DI(14),
+       A(15) => DI(15),
+       A(16) => DI(16),
+       A(17) => DI(17),
+       A(18) => DI(18),
+       A(19) => DI(19),
+       A(20) => DI(20),
+       A(21) => DI(21),
+       A(22) => DI(22),
+       A(23) => DI(23),
+       A(24) => DI(24),
+       A(25) => DI(25),
+       A(26) => DI(26),
+       A(27) => DI(27),
+       A(28) => DI(28),
+       A(29) => DI(29),
+       A(30) => DI(30),
+       A(31) => DI(31),
        B => BUS101,
        CS => NET141,
-       M => BUS79
+       M => NewStateR
   );
 
 U4 : XOR32
@@ -211,20 +264,51 @@ U5 : KeyGen
 U6 : REG32
   port map(
        CLK => RCLK,
-       DI => BUS81,
+       DI => NewStateL,
        DO => CurStateL
   );
 
 U7 : REG32
   port map(
        CLK => RCLK,
-       DI => BUS79,
+       DI => NewStateR,
        DO => CurStateR
   );
 
 U8 : DMX32
   port map(
-       AO => BUS83,
+       AO(0) => DO(0),
+       AO(1) => DO(1),
+       AO(2) => DO(2),
+       AO(3) => DO(3),
+       AO(4) => DO(4),
+       AO(5) => DO(5),
+       AO(6) => DO(6),
+       AO(7) => DO(7),
+       AO(8) => DO(8),
+       AO(9) => DO(9),
+       AO(10) => DO(10),
+       AO(11) => DO(11),
+       AO(12) => DO(12),
+       AO(13) => DO(13),
+       AO(14) => DO(14),
+       AO(15) => DO(15),
+       AO(16) => DO(16),
+       AO(17) => DO(17),
+       AO(18) => DO(18),
+       AO(19) => DO(19),
+       AO(20) => DO(20),
+       AO(21) => DO(21),
+       AO(22) => DO(22),
+       AO(23) => DO(23),
+       AO(24) => DO(24),
+       AO(25) => DO(25),
+       AO(26) => DO(26),
+       AO(27) => DO(27),
+       AO(28) => DO(28),
+       AO(29) => DO(29),
+       AO(30) => DO(30),
+       AO(31) => DO(31),
        BO => BUS89,
        CS => NET135,
        DI => CurStateR
@@ -232,11 +316,42 @@ U8 : DMX32
 
 U9 : DMX32
   port map(
-       AO => BUS87,
+       AO(0) => DO(32),
+       AO(1) => DO(33),
+       AO(2) => DO(34),
+       AO(3) => DO(35),
+       AO(4) => DO(36),
+       AO(5) => DO(37),
+       AO(6) => DO(38),
+       AO(7) => DO(39),
+       AO(8) => DO(40),
+       AO(9) => DO(41),
+       AO(10) => DO(42),
+       AO(11) => DO(43),
+       AO(12) => DO(44),
+       AO(13) => DO(45),
+       AO(14) => DO(46),
+       AO(15) => DO(47),
+       AO(16) => DO(48),
+       AO(17) => DO(49),
+       AO(18) => DO(50),
+       AO(19) => DO(51),
+       AO(20) => DO(52),
+       AO(21) => DO(53),
+       AO(22) => DO(54),
+       AO(23) => DO(55),
+       AO(24) => DO(56),
+       AO(25) => DO(57),
+       AO(26) => DO(58),
+       AO(27) => DO(59),
+       AO(28) => DO(60),
+       AO(29) => DO(61),
+       AO(30) => DO(62),
+       AO(31) => DO(63),
        BO => BUS97,
        CS => NET135,
        DI => CurStateL
   );
 
 
-end DES_MAIN2;
+end DES_MAIN;
