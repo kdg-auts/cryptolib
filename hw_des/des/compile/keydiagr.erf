@@ -1,6 +1,0 @@
-MESSAGE "Loading State Diagram data..."
-MESSAGE "Generating E:\DES\des\des\compile\keydiagr.vhd from E:\DES\des\des\src\keydiagr.asf"
-MESSAGE "Synthesis attributes will be generated for Synopsys FPGA Express"
-WARNING FSM2HDL_4028 "Attribute ENUM_ENCODING is not supported for Symbolic encoding." "E:\DES\des\des\src\keydiagr.asf" 5
-MESSAGE "Generating interface file..."
-MESSAGE "HDL code generation completed. 0 error(s), 1 warning(s)"
