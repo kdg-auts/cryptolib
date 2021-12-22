@@ -137,7 +137,6 @@ log/*
 *.cfg
 *.bdeid
 *.sth
-*.LIB
 *.rlb
 *.wsp
 *.ini
@@ -145,4 +144,3 @@ log/*
 *.htm
 *.bak
 *.set
-*.order
