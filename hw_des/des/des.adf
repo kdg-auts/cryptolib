@@ -28,10 +28,11 @@ AccessReadWriteSLP=0
 AccessReadTopLevel=1
 DisableC=1
 ENABLE_ADV_DATAFLOW=0
+fileopenfolder=D:\cryptolib\hw_des\des\src\TestBench_
 
 [HierarchyViewer]
 SortInfo=u
-HierarchyInformation=des_main2|DES_MAIN2|0 
+HierarchyInformation=des_main|DES_MAIN|0 des_main2|DES_MAIN2|0
 ShowHide=ShowTopLevel
 Selected=
 
@@ -49,7 +50,7 @@ CompileWithDebug=0
 Key_Generator=1
 Round_Function=1
 Round_Function\S_boxes=1
-Simulations=1
+TestBench=1
 
 [Files]
 /DMX32.vhd=-1
@@ -59,7 +60,6 @@ Simulations=1
 /XOR32.vhd=-1
 /REG32.vhd=-1
 /CipherControl.asf=-1
-/compile_all.do=-1
 /DES_MAIN.bde=-1
 Key_Generator/KeyGen.bde=-1
 Key_Generator/PC2.vhd=-1
@@ -77,13 +77,18 @@ Round_Function\S_boxes/S5.vhd=-1
 Round_Function\S_boxes/S4.vhd=-1
 Round_Function\S_boxes/S2.vhd=-1
 Round_Function\S_boxes/S1.vhd=-1
-Simulations/s1 test.awf=-1
-Simulations/s2.awf=-1
-Simulations/expan_test.awf=-1
-Simulations/P_test.awf=-1
-Simulations/DIAGR.awf=-1
-Simulations/DES_WORK.awf=-1
-Simulations/XOR48.awf=-1
+TestBench/expand_TB.vhd=-1
+TestBench/expand_TB_runtest.do=-1
+TestBench/ip_inv_TB.vhd=-1
+TestBench/ip_inv_TB_runtest.do=-1
+TestBench/ip_tb.vhd=-1
+TestBench/ip_tb_runtest.do=-1
+TestBench/p_tb.vhd=-1
+TestBench/p_tb_runtest.do=-1
+TestBench/pc1_tb.vhd=-1
+TestBench/pc1_tb_runtest.do=-1
+TestBench/pc2_tb.vhd=-1
+TestBench/pc2_tb_runtest.do=-1
 
 [Files.Data]
 .\src\DMX32.vhd=VHDL Source Code
@@ -93,7 +98,6 @@ Simulations/XOR48.awf=-1
 .\src\XOR32.vhd=VHDL Source Code
 .\src\REG32.vhd=VHDL Source Code
 .\src\CipherControl.asf=State Diagram
-.\src\compile_all.do=Macro
 .\src\DES_MAIN.bde=Block Diagram
 .\src\Key_Generator\KeyGen.bde=Block Diagram
 .\src\Key_Generator\PC2.vhd=VHDL Source Code
@@ -111,13 +115,18 @@ Simulations/XOR48.awf=-1
 .\src\Round_Function\S_boxes\S4.vhd=VHDL Source Code
 .\src\Round_Function\S_boxes\S2.vhd=VHDL Source Code
 .\src\Round_Function\S_boxes\S1.vhd=VHDL Source Code
-.\src\Simulations\s1 test.awf=Waveform File
-.\src\Simulations\s2.awf=Waveform File
-.\src\Simulations\expan_test.awf=Waveform File
-.\src\Simulations\P_test.awf=Waveform File
-.\src\Simulations\DIAGR.awf=Waveform File
-.\src\Simulations\DES_WORK.awf=Waveform File
-.\src\Simulations\XOR48.awf=Waveform File
+.\src\TestBench\expand_TB.vhd=VHDL Source Code
+.\src\TestBench\expand_TB_runtest.do=Macro
+.\src\TestBench\ip_inv_TB.vhd=VHDL Source Code
+.\src\TestBench\ip_inv_TB_runtest.do=Macro
+.\src\TestBench\ip_tb.vhd=VHDL Source Code
+.\src\TestBench\ip_tb_runtest.do=Macro
+.\src\TestBench\p_tb.vhd=VHDL Source Code
+.\src\TestBench\p_tb_runtest.do=Macro
+.\src\TestBench\pc1_tb.vhd=VHDL Source Code
+.\src\TestBench\pc1_tb_runtest.do=Macro
+.\src\TestBench\pc2_tb.vhd=VHDL Source Code
+.\src\TestBench\pc2_tb_runtest.do=Macro
 
 [file_out:/CipherControl.asf]
 /..\compile\CipherControl.vhd=-1
