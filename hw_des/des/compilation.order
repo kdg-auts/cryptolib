@@ -1,9 +1,3 @@
-.\src\Round_Function\S_boxes\S1.vhd
-.\src\Round_Function\S_boxes\S2.vhd
-.\src\Round_Function\S_boxes\S4.vhd
-.\src\Round_Function\S_boxes\S6.vhd
-.\src\Round_Function\S_boxes\S5.vhd
-.\src\Round_Function\S_boxes\S3.vhd
 .\src\Round_Function\S_boxes\S8.vhd
 .\src\Round_Function\S_boxes\S7.vhd
 .\src\Round_Function\XOR48.vhd
@@ -22,3 +16,15 @@
 .\src\IP_INV.vhd
 .\src\CipherControl.asf
 .\src\DES_MAIN.bde
+.\src\round_function\s_boxes\s1.vhd
+.\src\testbench\expand_tb.vhd
+.\src\testbench\ip_inv_tb.vhd
+.\src\testbench\ip_tb.vhd
+.\src\testbench\p_tb.vhd
+.\src\testbench\pc1_tb.vhd
+.\src\testbench\pc2_tb.vhd
+.\src\round_function\s_boxes\s2.vhd
+.\src\round_function\s_boxes\s4.vhd
+.\src\round_function\s_boxes\s6.vhd
+.\src\round_function\s_boxes\s5.vhd
+.\src\round_function\s_boxes\s3.vhd
