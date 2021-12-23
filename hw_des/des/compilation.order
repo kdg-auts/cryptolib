@@ -30,4 +30,4 @@
 .\src\round_function\s_boxes\s3.vhd
 .\src\key_generator\reg56.vhd
 .\src\key_generator\keysheduleround.vhd
-.\src\rk_ram.vhd
+.\src\key_generator\rk_ram.vhd
