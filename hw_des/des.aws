@@ -6,7 +6,7 @@ des=.\des\des.adf
 des=1
 [Browser]
 sort=order
-mode=asc
+mode=none
 [Order]
 order=1
 macro=

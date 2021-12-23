@@ -32,7 +32,7 @@ fileopenfolder=D:\cryptolib\hw_des\des\src\TestBench_
 
 [HierarchyViewer]
 SortInfo=u
-HierarchyInformation=des_main|DES_MAIN|0 des_main2|DES_MAIN2|0
+HierarchyInformation=des_main|DES_MAIN|0 
 ShowHide=ShowTopLevel
 Selected=
 
@@ -45,59 +45,6 @@ EnableDebug=0
 
 [LocalVhdlSets]
 CompileWithDebug=0
-
-[Files.Data]
-.\src\DMX32.vhd=VHDL Source Code
-.\src\IP.vhd=VHDL Source Code
-.\src\MUX32.vhd=VHDL Source Code
-.\src\IP_INV.vhd=VHDL Source Code
-.\src\XOR32.vhd=VHDL Source Code
-.\src\REG32.vhd=VHDL Source Code
-.\src\CipherControl.asf=State Diagram
-.\src\DES_MAIN.bde=Block Diagram
-.\src\Key_Generator\KeySheduleRound.vhd=VHDL Source Code
-.\src\Key_Generator\REG56.vhd=VHDL Source Code
-.\src\Key_Generator\KeyGen.bde=Block Diagram
-.\src\Key_Generator\PC2.vhd=VHDL Source Code
-.\src\Key_Generator\PC1.vhd=VHDL Source Code
-.\src\Key_Generator\LS.vhd=VHDL Source Code
-.\src\Round_Function\F.bde=Block Diagram
-.\src\Round_Function\XOR48.vhd=VHDL Source Code
-.\src\Round_Function\P.vhd=VHDL Source Code
-.\src\Round_Function\EXPAND.vhd=VHDL Source Code
-.\src\Round_Function\S_boxes\S6.vhd=VHDL Source Code
-.\src\Round_Function\S_boxes\S7.vhd=VHDL Source Code
-.\src\Round_Function\S_boxes\S8.vhd=VHDL Source Code
-.\src\Round_Function\S_boxes\S3.vhd=VHDL Source Code
-.\src\Round_Function\S_boxes\S5.vhd=VHDL Source Code
-.\src\Round_Function\S_boxes\S4.vhd=VHDL Source Code
-.\src\Round_Function\S_boxes\S2.vhd=VHDL Source Code
-.\src\Round_Function\S_boxes\S1.vhd=VHDL Source Code
-.\src\TestBench\expand_TB.vhd=VHDL Source Code
-.\src\TestBench\expand_TB_runtest.do=Macro
-.\src\TestBench\ip_inv_TB.vhd=VHDL Source Code
-.\src\TestBench\ip_inv_TB_runtest.do=Macro
-.\src\TestBench\ip_tb.vhd=VHDL Source Code
-.\src\TestBench\ip_tb_runtest.do=Macro
-.\src\TestBench\p_tb.vhd=VHDL Source Code
-.\src\TestBench\p_tb_runtest.do=Macro
-.\src\TestBench\pc1_tb.vhd=VHDL Source Code
-.\src\TestBench\pc1_tb_runtest.do=Macro
-.\src\TestBench\pc2_tb.vhd=VHDL Source Code
-.\src\TestBench\pc2_tb_runtest.do=Macro
-.\src\Key_Generator\RK_RAM.vhd=VHDL Source Code
-
-[file_out:/CipherControl.asf]
-/..\compile\CipherControl.vhd=-1
-
-[file_out:/DES_MAIN.bde]
-/..\compile\DES_MAIN.vhd=-1
-
-[file_out:Key_Generator/KeyGen.bde]
-Key_Generator/..\..\compile\KeyGen.vhd=-1
-
-[file_out:Round_Function/F.bde]
-Round_Function/..\..\compile\F.vhd=-1
 
 [Groups]
 Key_Generator=1
@@ -145,4 +92,57 @@ TestBench/pc1_tb.vhd=-1
 TestBench/pc1_tb_runtest.do=-1
 TestBench/pc2_tb.vhd=-1
 TestBench/pc2_tb_runtest.do=-1
+
+[Files.Data]
+.\src\DMX32.vhd=VHDL Source Code
+.\src\IP.vhd=VHDL Source Code
+.\src\MUX32.vhd=VHDL Source Code
+.\src\IP_INV.vhd=VHDL Source Code
+.\src\XOR32.vhd=VHDL Source Code
+.\src\REG32.vhd=VHDL Source Code
+.\src\CipherControl.asf=State Diagram
+.\src\DES_MAIN.bde=Block Diagram
+.\src\Key_Generator\RK_RAM.vhd=VHDL Source Code
+.\src\Key_Generator\KeySheduleRound.vhd=VHDL Source Code
+.\src\Key_Generator\REG56.vhd=VHDL Source Code
+.\src\Key_Generator\KeyGen.bde=Block Diagram
+.\src\Key_Generator\PC2.vhd=VHDL Source Code
+.\src\Key_Generator\PC1.vhd=VHDL Source Code
+.\src\Key_Generator\LS.vhd=VHDL Source Code
+.\src\Round_Function\F.bde=Block Diagram
+.\src\Round_Function\XOR48.vhd=VHDL Source Code
+.\src\Round_Function\P.vhd=VHDL Source Code
+.\src\Round_Function\EXPAND.vhd=VHDL Source Code
+.\src\Round_Function\S_boxes\S6.vhd=VHDL Source Code
+.\src\Round_Function\S_boxes\S7.vhd=VHDL Source Code
+.\src\Round_Function\S_boxes\S8.vhd=VHDL Source Code
+.\src\Round_Function\S_boxes\S3.vhd=VHDL Source Code
+.\src\Round_Function\S_boxes\S5.vhd=VHDL Source Code
+.\src\Round_Function\S_boxes\S4.vhd=VHDL Source Code
+.\src\Round_Function\S_boxes\S2.vhd=VHDL Source Code
+.\src\Round_Function\S_boxes\S1.vhd=VHDL Source Code
+.\src\TestBench\expand_TB.vhd=VHDL Source Code
+.\src\TestBench\expand_TB_runtest.do=Macro
+.\src\TestBench\ip_inv_TB.vhd=VHDL Source Code
+.\src\TestBench\ip_inv_TB_runtest.do=Macro
+.\src\TestBench\ip_tb.vhd=VHDL Source Code
+.\src\TestBench\ip_tb_runtest.do=Macro
+.\src\TestBench\p_tb.vhd=VHDL Source Code
+.\src\TestBench\p_tb_runtest.do=Macro
+.\src\TestBench\pc1_tb.vhd=VHDL Source Code
+.\src\TestBench\pc1_tb_runtest.do=Macro
+.\src\TestBench\pc2_tb.vhd=VHDL Source Code
+.\src\TestBench\pc2_tb_runtest.do=Macro
+
+[file_out:/CipherControl.asf]
+/..\compile\CipherControl.vhd=-1
+
+[file_out:/DES_MAIN.bde]
+/..\compile\DES_MAIN.vhd=-1
+
+[file_out:Key_Generator/KeyGen.bde]
+Key_Generator/..\..\compile\KeyGen.vhd=-1
+
+[file_out:Round_Function/F.bde]
+Round_Function/..\..\compile\F.vhd=-1
 
