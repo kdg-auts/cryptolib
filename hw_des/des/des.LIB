@@ -1,4 +1,4 @@
-timestamp=1640214271201
+timestamp=1640251942040
 
 [ciphercontrol]
 A/ciphercontrol_arch=A/CipherControl_arch 23|.\src\CipherControl.asf|10000|1*149199
@@ -33,16 +33,19 @@ Version=9.1.2353.4205  (Windows)|00000003789cd3f5370600015b00b0
 Version/des_main2=9.1.2353.4205  (Windows)|00000003789cd3f5370600015b00b0
 
 [dmx32]
-A/dmx32=A/DMX32 21|./src/DMX32.vhd|39|1*140334
-BinI32/dmx32=3*39434
-I=0*553
-I/dmx32=I/DMX32 0*949
-M=11|0|v98|1640213166889|./src/DMX32.vhd|0*210*0x427d5f323cd5ec10f9b77ea6eebd23b6db5147a7|0*482*0xab32bc1a2daf049573e14469f634e0e6
+A/dmx32=+21|./src/DMX32.vhd|39|1*140334
+A/dmx32_arch=A/DMX32_arch 21|./src/DMX32.vhd|24|1*276431
+BinI32/dmx32_arch=3*51582
+I=0*124180
+I/dmx32_arch=I/DMX32_arch 0*124585
+M=11|0|v98|1640217039057|./src/DMX32.vhd|0*123843*0x4f8b6d5ab678966ddbd11950098e16c4a110f31f|0*124109*0xab32bc1a2daf049573e14469f634e0e6
 M/dmx32=M/DMX32 21|0|v98|1640213334265|./src/DMX32.vhd|0*652*0xa8f5b6a806c6f9d51266083dec885a7f3934025b|0*869*0xb33770ff1c10522f9491560174ac8e6c
-R=./src/DMX32.vhd|28
+M/dmx32_arch=M/DMX32_arch 21|0|v98|1640217039059|./src/DMX32.vhd|0*124279*0x73561bc0a8bd920e195fa22bcb520689efc16416|0*124500*0xb33770ff1c10522f9491560174ac8e6c
+R=./src/DMX32.vhd|15
 S/dmx32=S/DMX32 40|0|2*2869
 Version=9.1.2353.4205  (Windows)|00000003789cd3f5370600015b00b0
 Version/dmx32=9.1.2353.4205  (Windows)|00000003789cd3f5370600015b00b0
+Version/dmx32_arch=9.1.2353.4205  (Windows)|00000003789cd3f5370600015b00b0
 
 [expand]
 A/expand=A/EXPAND 21|./src/Round_Function/EXPAND.vhd|35|1*112658
@@ -86,24 +89,24 @@ Version=9.1.2353.4205  (Windows)|00000003789cd3f5370600015b00b0
 Version/f=9.1.2353.4205  (Windows)|00000003789cd3f5370600015b00b0
 
 [ip]
-A/ip=A/IP 21|./src/IP.vhd|11|1*144438
-BinI32/ip=3*40628
+A/ip=A/IP 21|./src/IP.vhd|22|1*304260
+BinI32/ip=3*58023
 I=0*1480
-I/ip=I/IP 0*2425
+I/ip=I/IP 0*134149
 M=11|0|v98|1640213166979|./src/IP.vhd|0*1206*0x77958eac3378a97cde2848f94a0c0097d332de25|0*1415*0xab32bc1a2daf049573e14469f634e0e6
-M/ip=M/IP 21|0|v98|1640213334454|./src/IP.vhd|0*1576*0x8499b10547c70a6b0fc70f0dbf82977c5a4ab2e0|0*2354*0xb33770ff1c10522f9491560174ac8e6c
+M/ip=M/IP 21|0|v98|1640251937498|./src/IP.vhd|0*133204*0xb7f3a302ac5166c53c285f2233ba17a4b1da1d52|0*134078*0xb33770ff1c10522f9491560174ac8e6c
 R=./src/IP.vhd|4
 S/ip=S/IP 40|0|2*4936
 Version=9.1.2353.4205  (Windows)|00000003789cd3f5370600015b00b0
 Version/ip=9.1.2353.4205  (Windows)|00000003789cd3f5370600015b00b0
 
 [ip_inv]
-A/ip_inv_arch=A/IP_INV_arch 21|./src/IP_INV.vhd|11|1*146680
-BinI32/ip_inv_arch=3*41223
+A/ip_inv_arch=A/IP_INV_arch 21|./src/IP_INV.vhd|22|1*307224
+BinI32/ip_inv_arch=3*58859
 I=0*3961
-I/ip_inv_arch=I/IP_INV_arch 0*4998
+I/ip_inv_arch=I/IP_INV_arch 0*135249
 M=11|0|v98|1640213167115|./src/IP_INV.vhd|0*3663*0xd62e27249c8f1903f65669affd89f88fc4350fe5|0*3888*0xab32bc1a2daf049573e14469f634e0e6
-M/ip_inv_arch=M/IP_INV_arch 21|0|v98|1640213334517|./src/IP_INV.vhd|0*4061*0x2b0a0fead49b6e065fde0f69cf442f509424d568|0*4910*0xb33770ff1c10522f9491560174ac8e6c
+M/ip_inv_arch=M/IP_INV_arch 21|0|v98|1640251939944|./src/IP_INV.vhd|0*134248*0xd9f607a36141b799418eda791646ddfee6d93c9c|0*135161*0xb33770ff1c10522f9491560174ac8e6c
 R=./src/IP_INV.vhd|4
 S/ip_inv=S/IP_INV 40|0|2*0
 Version=9.1.2353.4205  (Windows)|00000003789cd3f5370600015b00b0
@@ -141,6 +144,17 @@ R=./compile/keygen.vhd|25
 S/keygen=S/KeyGen 40|0|2*7749
 Version=9.1.2353.4205  (Windows)|00000003789cd3f5370600015b00b0
 Version/keygen=9.1.2353.4205  (Windows)|00000003789cd3f5370600015b00b0
+
+[keyscheduleround]
+A/keyscheduleround_arch=A/KeyScheduleRound_arch 21|./src/KeySheduleRound.vhd|24|1*293505
+BinI32/keyscheduleround_arch=3*55147
+I=0*128311
+I/keyscheduleround_arch=I/KeyScheduleRound_arch 0*129016
+M=11|0|v98|1640247248009|./src/KeySheduleRound.vhd|0*127914*0x1432ea8911c681b79c31a2bcff1c066af6003db4|0*128219*0xab32bc1a2daf049573e14469f634e0e6
+M/keyscheduleround_arch=M/KeyScheduleRound_arch 21|0|v98|1640247248013|./src/KeySheduleRound.vhd|0*128421*0x74284aab4aa119f4994b3076759a1c70999f613d|0*128899*0xb33770ff1c10522f9491560174ac8e6c
+R=./src/KeySheduleRound.vhd|15
+Version=9.1.2353.4205  (Windows)|00000003789cd3f5370600015b00b0
+Version/keyscheduleround_arch=9.1.2353.4205  (Windows)|00000003789cd3f5370600015b00b0
 
 [ls]
 A/ls=A/LS 21|./src/Key_Generator/LS.vhd|15|1*130316
@@ -196,15 +210,18 @@ R=./src/testbench/p_tb.vhd|68
 Version=9.1.2353.4205  (Windows)|00000003789cd3f5370600015b00b0
 
 [pc1]
-A/pc1=A/PC1 21|./src/Key_Generator/PC1.vhd|11|1*126063
-BinI32/pc1=3*37420
-I=0*23885
-I/pc1=I/PC1 0*24776
-M=11|0|v98|1640213168066|./src/key_generator/pc1.vhd|0*23578*0x3da3f1880658f7723620cf6644d21b7c4745ca75|0*23804*0xab32bc1a2daf049573e14469f634e0e6
+A/pc1=+21|./src/Key_Generator/PC1.vhd|11|1*126063
+A/pc1_arch=A/PC1_arch 21|./src/Key_Generator/PC1.vhd|22|1*297880
+BinI32/pc1_arch=3*56627
+I=0*130536
+I/pc1_arch=I/PC1_arch 0*131438
+M=11|0|v98|1640247271576|./src/Key_Generator/PC1.vhd|0*130233*0x33f1bc56025f9f186ac8aa3353cb110b6386f491|0*130455*0xab32bc1a2daf049573e14469f634e0e6
 M/pc1=M/PC1 21|0|v98|1640213333583|./src/key_generator/pc1.vhd|0*23982*0xb937b79fcb1f327f755e2dc1cc18c1556b841a9a|0*24688*0xb33770ff1c10522f9491560174ac8e6c
-R=./src/key_generator/pc1.vhd|4
+M/pc1_arch=M/PC1_arch 21|0|v98|1640247271578|./src/Key_Generator/PC1.vhd|0*130633*0x05cb7a9acc3cef7839ac63fce44234330949409d|0*131345*0xb33770ff1c10522f9491560174ac8e6c
+R=./src/Key_Generator/PC1.vhd|15
 Version=9.1.2353.4205  (Windows)|00000003789cd3f5370600015b00b0
 Version/pc1=9.1.2353.4205  (Windows)|00000003789cd3f5370600015b00b0
+Version/pc1_arch=9.1.2353.4205  (Windows)|00000003789cd3f5370600015b00b0
 
 [pc1_tb]
 A/pc1_tb_arch=21|./src/testbench/pc1_tb.vhd|9|1*257200
@@ -218,12 +235,12 @@ Version=9.1.2353.4205  (Windows)|00000003789cd3f5370600015b00b0
 Version/pc1_tb_arch=9.1.2353.4205  (Windows)|00000003789cd3f5370600015b00b0
 
 [pc2]
-A/pc2_arch=A/PC2_arch 21|./src/Key_Generator/PC2.vhd|11|1*128059
-BinI32/pc2_arch=3*37911
+A/pc2_arch=A/PC2_arch 21|./src/Key_Generator/PC2.vhd|22|1*295623
+BinI32/pc2_arch=3*55947
 I=0*22447
-I/pc2_arch=I/PC2_arch 0*23318
+I/pc2_arch=I/PC2_arch 0*129973
 M=11|0|v98|1640213167900|./src/key_generator/pc2.vhd|0*22140*0x725b37409a7e235a9ce671160b0ee50bfc79b14a|0*22366*0xab32bc1a2daf049573e14469f634e0e6
-M/pc2_arch=M/PC2_arch 21|0|v98|1640213333651|./src/key_generator/pc2.vhd|0*22544*0x9be9e6d3f583a75b8a5b6affe71438f136deae19|0*23225*0xb33770ff1c10522f9491560174ac8e6c
+M/pc2_arch=M/PC2_arch 21|0|v98|1640247267854|./src/Key_Generator/PC2.vhd|0*129199*0xb82d709251b778e750694c66b20d413e3977aebe|0*129880*0xb33770ff1c10522f9491560174ac8e6c
 R=./src/key_generator/pc2.vhd|4
 Version=9.1.2353.4205  (Windows)|00000003789cd3f5370600015b00b0
 Version/pc2_arch=9.1.2353.4205  (Windows)|00000003789cd3f5370600015b00b0
@@ -240,16 +257,41 @@ Version=9.1.2353.4205  (Windows)|00000003789cd3f5370600015b00b0
 Version/pc2_tb_arch=9.1.2353.4205  (Windows)|00000003789cd3f5370600015b00b0
 
 [reg32]
-A/reg32=A/REG32 21|./src/REG32.vhd|38|1*143230
-BinI32/reg32=3*40229
-I=0*6535
-I/reg32=I/REG32 0*6899
-M=11|0|v98|1640213167273|./src/REG32.vhd|0*6225*0x1f74fb13a2953918111c9a8e6c132c40ccd6eff0|0*6464*0xab32bc1a2daf049573e14469f634e0e6
+A/reg32=+21|./src/REG32.vhd|38|1*143230
+A/reg32_arch=A/REG32_arch 21|./src/REG32.vhd|23|1*286543
+BinI32/reg32_arch=3*54065
+I=0*126122
+I/reg32_arch=I/REG32_arch 0*126495
+M=11|0|v98|1640217457790|./src/REG32.vhd|0*125818*0xe6fb0e7fbef2f70e52506b9012147a049f3b7cc8|0*126051*0xab32bc1a2daf049573e14469f634e0e6
 M/reg32=M/REG32 21|0|v98|1640213334392|./src/REG32.vhd|0*6634*0x2891d4624406750d8dca108e280a421c6ffb2907|0*6819*0xb33770ff1c10522f9491560174ac8e6c
-R=./src/REG32.vhd|28
+M/reg32_arch=M/REG32_arch 21|0|v98|1640217513062|./src/REG32.vhd|0*126221*0x258fd86561c7c1e2d02382b2e20440f18b33d58f|0*126410*0xb33770ff1c10522f9491560174ac8e6c
+R=./src/REG32.vhd|15
 S/reg32=S/REG32 40|0|2*10597
 Version=9.1.2353.4205  (Windows)|00000003789cd3f5370600015b00b0
 Version/reg32=9.1.2353.4205  (Windows)|00000003789cd3f5370600015b00b0
+Version/reg32_arch=9.1.2353.4205  (Windows)|00000003789cd3f5370600015b00b0
+
+[reg56]
+A/reg56_arch=A/REG56_arch 21|./src/Key_Generator/REG56.vhd|25|1*291585
+BinI32/reg56_arch=3*54469
+I=0*120864
+I/reg56_arch=I/REG56_arch 0*127554
+M=11|0|v98|1640215453517|./src/REG56.vhd|0*120519*0xba336eea833dfda5ae323ed68f1fe807db79eff0|0*120793*0xab32bc1a2daf049573e14469f634e0e6
+M/reg56_arch=M/REG56_arch 21|0|v98|1640247202109|./src/Key_Generator/REG56.vhd|0*127118*0x91c5aaef6ecf817c2e38f1410179e7ab510e6907|0*127455*0xb33770ff1c10522f9491560174ac8e6c
+R=./src/REG56.vhd|4
+Version=9.1.2353.4205  (Windows)|00000003789cd3f5370600015b00b0
+Version/reg56_arch=9.1.2353.4205  (Windows)|00000003789cd3f5370600015b00b0
+
+[rk_ram]
+A/rk_ram_arch=A/RK_RAM_arch 21|./src/RK_RAM.vhd|28|1*299896
+BinI32/rk_ram_arch=3*57122
+I=0*132248
+I/rk_ram_arch=I/RK_RAM_arch 0*133030
+M=11|0|v98|1640251880260|./src/RK_RAM.vhd|0*131816*0xb42c5f817fe62f62fcecacd8984b5aebbff763e0|0*132175*0xab32bc1a2daf049573e14469f634e0e6
+M/rk_ram_arch=M/RK_RAM_arch 21|0|v98|1640251910819|./src/RK_RAM.vhd|0*132410*0xd74bb5766378a03197271bba07a8bc6a98dd0436|0*132942*0xb33770ff1c10522f9491560174ac8e6c
+R=./src/RK_RAM.vhd|16
+Version=9.1.2353.4205  (Windows)|00000003789cd3f5370600015b00b0
+Version/rk_ram_arch=9.1.2353.4205  (Windows)|00000003789cd3f5370600015b00b0
 
 [s1]
 A/s1=A/S1 21|./src/Round_Function/S_boxes/S1.vhd|37|1*99705
@@ -372,16 +414,19 @@ R=./src/testbench/pc2_tb.vhd|76
 Version=9.1.2353.4205  (Windows)|00000003789cd3f5370600015b00b0
 
 [xor32]
-A/xor32=A/XOR32 21|./src/XOR32.vhd|38|1*141909
-BinI32/xor32=3*39740
-I=0*5623
-I/xor32=I/XOR32 0*5942
-M=11|0|v98|1640213167199|./src/XOR32.vhd|0*5300*0x792258e551f717869063faa5570c46b510e5e99a|0*5552*0xab32bc1a2daf049573e14469f634e0e6
+A/xor32=+21|./src/XOR32.vhd|38|1*141909
+A/xor32_arch=A/XOR32_arch 21|./src/XOR32.vhd|23|1*310223
+BinI32/xor32_arch=3*59699
+I=0*125202
+I/xor32_arch=I/XOR32_arch 0*135590
+M=11|0|v98|1640217285514|./src/XOR32.vhd|0*124885*0x6b639bb1116020c03147fafa6b612ca4302d560c|0*125131*0xab32bc1a2daf049573e14469f634e0e6
 M/xor32=M/XOR32 21|0|v98|1640213334327|./src/XOR32.vhd|0*5722*0x09a41fc3057280e290179e5718d9e2a988f8cef4|0*5862*0xb33770ff1c10522f9491560174ac8e6c
-R=./src/XOR32.vhd|28
+M/xor32_arch=M/XOR32_arch 21|0|v98|1640251941969|./src/XOR32.vhd|0*135361*0x5d352c5f988ef3ff909664012375f0c0206d18cc|0*135505*0xb33770ff1c10522f9491560174ac8e6c
+R=./src/XOR32.vhd|14
 S/xor32=S/XOR32 40|0|2*6132
 Version=9.1.2353.4205  (Windows)|00000003789cd3f5370600015b00b0
 Version/xor32=9.1.2353.4205  (Windows)|00000003789cd3f5370600015b00b0
+Version/xor32_arch=9.1.2353.4205  (Windows)|00000003789cd3f5370600015b00b0
 
 [xor48]
 A/xor48=A/XOR48 21|./src/Round_Function/XOR48.vhd|16|1*110846
@@ -395,20 +440,20 @@ Version=9.1.2353.4205  (Windows)|00000003789cd3f5370600015b00b0
 Version/xor48=9.1.2353.4205  (Windows)|00000003789cd3f5370600015b00b0
 
 [~A]
-ModifyID=337
+ModifyID=462
 Version=73
 
 [~MFT]
-0=276|0des.mgf|120140|28893
-1=90|1des.mgf|266255|99705
+0=393|0des.mgf|135590|38117
+1=123|1des.mgf|310223|128846
 2=8|2des.mgf|16546|0
-3=68|3des.mgf|48239|21191
+3=105|3des.mgf|59699|29347
 
 [~U]
 ciphercontrol=CipherControl 11|0*7004||0x3
 des_main=DES_MAIN 11|0*85292|
 des_main2=DES_MAIN2 11|0*11683|
-dmx32=DMX32 11|0*0||0x3
+dmx32=DMX32 11|0*123633||0x3
 expand=EXPAND 11|0*32175|
 expand_tb=11|0*92186|
 expand_tb_conf=2||
@@ -418,16 +463,19 @@ ip_inv=IP_INV 11|0*3499||0x3
 ip_inv_tb=11|0*95276|
 ip_tb=11|0*103837|
 keygen=KeyGen 11|0*18077||0x3
+keyscheduleround=KeyScheduleRound 11|0*127664|
 ls=LS 11|0*24877|
 mux32=MUX32 11|0*2524||0x3
 p=P 11|0*31035|
 p_tb=11|0*112483|
 p_tb_conf=2||
-pc1=PC1 11|0*23424|
+pc1=PC1 11|0*130079|
 pc1_tb=11|0*114785|
 pc2=PC2 11|0*21986|
 pc2_tb=11|0*117592|
-reg32=REG32 11|0*6047||0x3
+reg32=REG32 11|0*125640||0x3
+reg56=REG56 11|0*120302|
+rk_ram=RK_RAM 11|0*131544|
 s1=S1 11|0*52363|
 s2=S2 11|0*49630|
 s3=S3 11|0*41431|
@@ -440,6 +488,6 @@ testbench_for_ip=TESTBENCH_FOR_ip 2||
 testbench_for_ip_inv=TESTBENCH_FOR_ip_inv 2||
 testbench_for_pc1=TESTBENCH_FOR_pc1 2||
 testbench_for_pc2=TESTBENCH_FOR_pc2 2||
-xor32=XOR32 11|0*5110||0x3
+xor32=XOR32 11|0*124695||0x3
 xor48=XOR48 11|0*29965|
 
