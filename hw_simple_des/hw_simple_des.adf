@@ -1,0 +1,57 @@
+[Project]
+Current Flow=Generic
+VCS=0
+version=4
+Current Config=compile
+[Configurations]
+compile=hw_simple_des
+[Library]
+hw_simple_des=.\hw_simple_des\hw_simple_des.lib
+[$LibMap$]
+hw_simple_des=.
+Active_lib=
+[Settings]
+FLOW_TYPE=HDL
+LANGUAGE=VHDL
+REFRESH_FLOW=1
+FLOWTOOLS=NONE
+FAMILY=
+fileopenfolder=D:\cryptolib\hw_simple_des\src
+[Files]
+/simple_des_full.bde=-1
+/init_perm.vhd=-1
+/init_perm_inv.vhd=-1
+/key_mux.vhd=-1
+/perm_choice1.vhd=-1
+/perm_choice2.vhd=-1
+/rf_expand.vhd=-1
+/rf_permute.vhd=-1
+/rf_subst_1.vhd=-1
+/rf_subst_2.vhd=-1
+/rf_xor_8.vhd=-1
+/rotate1.vhd=-1
+/rotate2.vhd=-1
+/round_func.vhd=-1
+/xor_4.vhd=-1
+/simple_des_full_tb.vhd=-1
+/simple_des_full_tb.do=-1
+[Files.Data]
+.\src\simple_des_full.bde=Block Diagram
+.\src\init_perm.vhd=VHDL Source Code
+.\src\init_perm_inv.vhd=VHDL Source Code
+.\src\key_mux.vhd=VHDL Source Code
+.\src\perm_choice1.vhd=VHDL Source Code
+.\src\perm_choice2.vhd=VHDL Source Code
+.\src\rf_expand.vhd=VHDL Source Code
+.\src\rf_permute.vhd=VHDL Source Code
+.\src\rf_subst_1.vhd=VHDL Source Code
+.\src\rf_subst_2.vhd=VHDL Source Code
+.\src\rf_xor_8.vhd=VHDL Source Code
+.\src\rotate1.vhd=VHDL Source Code
+.\src\rotate2.vhd=VHDL Source Code
+.\src\round_func.vhd=VHDL Source Code
+.\src\xor_4.vhd=VHDL Source Code
+.\src\simple_des_full_tb.vhd=VHDL Test Bench
+.\src\simple_des_full_tb.do=Macro
+[file_out:/simple_des_full.bde]
+/..\compile\simple_des_full.vhd=-1

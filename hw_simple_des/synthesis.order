@@ -1,0 +1,16 @@
+i<>.\src\simple_des_full.bde
+i<>.\src\init_perm.vhd
+i<>.\src\init_perm_inv.vhd
+i<>.\src\key_mux.vhd
+i<>.\src\perm_choice1.vhd
+i<>.\src\perm_choice2.vhd
+i<>.\src\rf_expand.vhd
+i<>.\src\rf_permute.vhd
+i<>.\src\rf_subst_1.vhd
+i<>.\src\rf_subst_2.vhd
+i<>.\src\rf_xor_8.vhd
+i<>.\src\rotate1.vhd
+i<>.\src\rotate2.vhd
+i<>.\src\round_func.vhd
+i<>.\src\xor_4.vhd
+i<>.\src\simple_des_full_tb.vhd

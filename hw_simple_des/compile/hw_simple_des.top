@@ -1,0 +1,11 @@
+subst_1 ENTITY
+rotate2 ENTITY
+round_func ENTITY
+xor_4 ENTITY
+rotate1 ENTITY
+subst_2 ENTITY
+perm_choice1 ENTITY
+perm_choice2 ENTITY
+init_perm_inv ENTITY
+key_mux ENTITY
+init_perm ENTITY
