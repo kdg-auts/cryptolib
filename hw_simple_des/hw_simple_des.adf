@@ -55,3 +55,7 @@ fileopenfolder=D:\cryptolib\hw_simple_des\src
 .\src\simple_des_full_tb.do=Macro
 [file_out:/simple_des_full.bde]
 /..\compile\simple_des_full.vhd=-1
+[HierarchyViewer]
+HierarchyInformation=simple_des_full_tb|simple_des_full_tb_arch|0
+ShowHide=ShowTopLevel
+Selected=
