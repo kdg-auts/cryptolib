@@ -144,3 +144,9 @@ log/*
 *.htm
 *.bak
 *.set
+
+# VHDL and Active-HDL projects
+wave.*/
+*.asdb
+*.lib
+*~*
