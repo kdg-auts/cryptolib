@@ -95,58 +95,109 @@ def encrypt(key, plaintext):
     """Encrypt plaintext with given key"""
     data = fk(keyGen(key)[0], ip(plaintext))
     if DEBUG:
-        print(f"Round 1: RK = {keyGen(key)[0]:>010b} IP(plaintext) = {ip(plaintext):>08b} State = {data:>08b}")
+        print(f">>DEBUG - Inputs: Key = {key:>010b} ({key:>03X}) PT = {plaintext:>08b} ({plaintext:>02X})")
+        print(f">>DEBUG - Round1: IP(PT) = {ip(plaintext):>08b} ({ip(plaintext):>02X}) RK = {keyGen(key)[0]:>08b} ({keyGen(key)[0]:>02X}) StateOut = {data:>08b} ({data:>02X}) ")
     result = fp(fk(keyGen(key)[1], swapNibbles(data)))
     if DEBUG:
-        print(f"Round 2: RK = {keyGen(key)[1]:>010b} StateIn = {swapNibbles(data):>08b}")
-        print(f"         StateOut = {fk(keyGen(key)[1], swapNibbles(data)):>08b} IPinv(StateOut) = {result:>08b}")
+        print(f">>DEBUG - Round2: RK = {keyGen(key)[1]:>08b} ({keyGen(key)[1]:>02X}) StateIn = {swapNibbles(data):>08b} ({swapNibbles(data):>02X})")
+        print(f">>DEBUG - Outputs: StateOut = {fk(keyGen(key)[1], swapNibbles(data)):>08b} ({fk(keyGen(key)[1], swapNibbles(data)):>02X}) IPinv(StateOut) = {result:>08b} ({result:>02X})")
     return result
  
 def decrypt(key, ciphertext):
     """Decrypt ciphertext with given key"""
     data = fk(keyGen(key)[1], ip(ciphertext))
-    return fp(fk(keyGen(key)[0], swapNibbles(data)))  
+    if DEBUG:
+        print(f">>DEBUG - Inputs: Key = {key:>010b} ({key:>03X}) PT = {ciphertext:>08b} ({ciphertext:>02X})")
+        print(f">>DEBUG - Round1: IP(PT) = {ip(ciphertext):>08b} ({ip(ciphertext):>02X}) RK = {keyGen(key)[1]:>08b} ({keyGen(key)[1]:>02X}) StateOut = {data:>08b} ({data:>02X}) ")
+    result = fp(fk(keyGen(key)[0], swapNibbles(data)))
+    if DEBUG:
+        print(f">>DEBUG - Round2: RK = {keyGen(key)[0]:>08b} ({keyGen(key)[0]:>02X}) StateIn = {swapNibbles(data):>08b} ({swapNibbles(data):>02X})")
+        print(f">>DEBUG - Outputs: StateOut = {fk(keyGen(key)[0], swapNibbles(data)):>08b} ({fk(keyGen(key)[0], swapNibbles(data)):>02X}) IPinv(StateOut) = {result:>08b} ({result:>02X})")
+    return result
  
 if __name__ == '__main__':
     # Test vectors described in "Simplified DES (SDES)"
     # (http://www2.kinneret.ac.il/mjmay/ise328/328-Assignment1-SDES.pdf)
  
-    DEBUG = True
-
-    try:
-        print(f"Test 1 - Key = {0b0000000000:>010b} Data = {0b10101010:>08b}")
-        assert encrypt(0b0000000000, 0b10101010) == 0b00010001
-    except AssertionError:
-        print("Error on encrypt:")
-        print("Output: ", encrypt(0b0000000000, 0b10101010), "Expected: ", 0b00010001)
-        exit(1)
-    try:
-        print(f"Test 2 - Key = {0b1110001110:>010b} Data = {0b10101010:>08b}")
-        assert encrypt(0b1110001110, 0b10101010) == 0b11001010
-    except AssertionError:
-        print("Error on encrypt:")
-        print("Output: ", encrypt(0b1110001110, 0b10101010), "Expected: ", 0b11001010)
-        exit(1)
-    try:
-        print(f"Test 3 - Key = {0b1110001110:>010b} Data = {0b01010101:>08b}")
-        assert encrypt(0b1110001110, 0b01010101) == 0b01110000
-    except AssertionError:
-        print("Error on encrypt:")
-        print("Output: ", encrypt(0b1110001110, 0b01010101), "Expected: ", 0b01110000)
-        exit(1)
-    try:
-        print(f"Test 4 - Key = {0b1111111111:>010b} Data = {0b10101010:>08b}")
-        assert encrypt(0b1111111111, 0b10101010) == 0b00000100
-    except AssertionError:
-        print("Error on encrypt:")
-        print("Output: ", encrypt(0b1111111111, 0b10101010), "Expected: ", 0b00000100)
-        exit(1)
- 
     DEBUG = False
 
-    t1 = time()
-    for i in range(1000):
-        encrypt(0b1110001110, 0b10101010)
-    t2 = time()
-    print("Elapsed time for 1,000 encryptions: {:0.3f}s".format(t2 - t1))
-    exit()
+    # TEST CASE 1
+    try:
+        ckey = 0b1110001110
+        data = 0b10101010
+        cexp = 0b11001010
+        cres = encrypt(ckey, data)
+        assert cres == cexp
+        print(f"Test 1 encryption: Key = {ckey:>010b} ({ckey:>03x}) Data = {data:>08b} ({data:>02x}) CTxt = {cres:>08b} ({cres:>02x})")
+    except AssertionError:
+        print("!! Test 1 - Error on encrypt:")
+        print(f"Output: {cres:>08b}, Expected: {cexp:>08b}")
+        exit(1)
+    try:
+        ckey = 0b1110001110
+        ctxt = 0b11001010
+        dexp = 0b10101010
+        data = decrypt(ckey, ctxt)
+        assert data == dexp
+        print(f"Test 1 decryption: Key = {ckey:>010b} ({ckey:>03x}) CTxt = {ctxt:>08b} ({ctxt:>02x}) Data = {data:>08b} ({data:>02x})")
+    except AssertionError:
+        print("!! Test 1 - Error on decrypt:")
+        print(f"Output: {data:>08b}, Expected: {dexp:>08b}")
+        exit(1)
+    
+    # TEST CASE 2
+    try:
+        ckey = 0b1110001110
+        data = 0b01010101
+        cexp = 0b01110000
+        cres = encrypt(ckey, data)
+        assert cres == cexp
+        print(f"Test 2 encryption: Key = {ckey:>010b} ({ckey:>03x}) Data = {data:>08b} ({data:>02x}) CTxt = {cres:>08b} ({cres:>02x})")
+    except AssertionError:
+        print("!! Test 2 - Error on encrypt:")
+        print(f"Output: {cres:>08b}, Expected: {cexp:>08b}")
+        exit(1)
+    try:
+        ckey = 0b1110001110
+        ctxt = 0b01110000
+        dexp = 0b01010101
+        data = decrypt(ckey, ctxt)
+        assert data == dexp
+        print(f"Test 2 decryption: Key = {ckey:>010b} ({ckey:>03x}) CTxt = {ctxt:>08b} ({ctxt:>02x}) Data = {data:>08b} ({data:>02x})")
+    except AssertionError:
+        print("!! Test 2 - Error on decrypt:")
+        print(f"Output: {data:>08b}, Expected: {dexp:>08b}")
+        exit(1)
+    
+    # TEST CASE 3
+    try:
+        ckey = 0b1111111111
+        data = 0b10101010
+        cexp = 0b00000100
+        cres = encrypt(ckey, data)
+        assert cres == cexp
+        print(f"Test 3 encryption: Key = {ckey:>010b} ({ckey:>03x}) Data = {data:>08b} ({data:>02x}) CTxt = {cres:>08b} ({cres:>02x})")
+    except AssertionError:
+        print("!! Test 3 - Error on encrypt:")
+        print(f"Output: {cres:>08b}, Expected: {cexp:>08b}")
+        exit(1)
+    try:
+        ckey = 0b1111111111
+        ctxt = 0b00000100
+        dexp = 0b10101010
+        data = decrypt(ckey, ctxt)
+        assert data == dexp
+        print(f"Test 3 decryption: Key = {ckey:>010b} ({ckey:>03x}) CTxt = {ctxt:>08b} ({ctxt:>02x}) Data = {data:>08b} ({data:>02x})")
+    except AssertionError:
+        print("!! Test 3 - Error on decrypt:")
+        print(f"Output: {data:>08b}, Expected: {dexp:>08b}")
+        exit(1)
+
+    # DEBUG = False
+
+    # t1 = time()
+    # for i in range(1000):
+    #     encrypt(0b1110001110, 0b10101010)
+    # t2 = time()
+    # print("Elapsed time for 1,000 encryptions: {:0.3f}s".format(t2 - t1))
+    # exit()
