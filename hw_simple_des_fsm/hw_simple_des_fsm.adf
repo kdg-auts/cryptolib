@@ -64,7 +64,7 @@ fileopenfolder=D:\cryptolib\hw_simple_des\src
 .\src\hw_simple_des_fsm_tb.vhd=VHDL Source Code
 .\src\hw_simple_des_fsm_tb_run.do=Macro
 [HierarchyViewer]
-HierarchyInformation=state_mux|state_mux_arch|0
+HierarchyInformation=hw_simple_des_fsm_tb|hw_simple_des_fsm_tb_arch|0 state_mux|state_mux_arch|0
 ShowHide=ShowTopLevel
 Selected=
 [file_out:/hw_simple_des_fsm.bde]

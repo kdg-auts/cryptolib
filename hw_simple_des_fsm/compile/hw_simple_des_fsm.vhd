@@ -8,7 +8,7 @@
 -------------------------------------------------------------------------------
 --
 -- File        : D:\cryptolib\hw_simple_des_fsm\compile\hw_simple_des_fsm.vhd
--- Generated   : Mon Nov  6 17:44:46 2023
+-- Generated   : Tue Nov  7 17:37:18 2023
 -- From        : D:\cryptolib\hw_simple_des_fsm\src\hw_simple_des_fsm.bde
 -- By          : Bde2Vhdl ver. 2.6
 --
