@@ -104,11 +104,16 @@ if __name__ == '__main__':
         print("Encryption error")
         print(encrypt(plaintext), ciphertext)
         sys.exit(1)
+    else:
+        print(f"plaintext = {plaintext:016b} ({plaintext:04X}), key = {key:016b} ({key:04X}), ciphertext = {encrypt(plaintext):016b} ({encrypt(plaintext):04X})")
+    
     try:
         assert decrypt(ciphertext) == plaintext
     except AssertionError:
         print("Decryption error")
         print(decrypt(ciphertext), plaintext)
         sys.exit(1)
+    else:
+        print(f"ciphertext = {ciphertext:016b} ({ciphertext:04X}), key = {key:016b} ({key:04X}), plaintext = {decrypt(ciphertext):016b} ({decrypt(ciphertext):04X})")
     print("Test ok!")
     sys.exit()
