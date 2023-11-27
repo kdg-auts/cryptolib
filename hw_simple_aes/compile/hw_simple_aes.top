@@ -1,0 +1,10 @@
+state_mux ENTITY
+sub_word ENTITY
+xor2_8 ENTITY
+sub_nibbles ENTITY
+shift_rows ENTITY
+rot_word ENTITY
+mix_columns ENTITY
+inv_sub_nibbles ENTITY
+inv_mix_columns ENTITY
+add_round_key ENTITY

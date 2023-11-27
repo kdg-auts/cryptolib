@@ -1,0 +1,67 @@
+[Project]
+Current Flow=Generic
+VCS=0
+version=4
+Current Config=compile
+[Configurations]
+compile=hw_simple_aes
+[Library]
+hw_simple_aes=.\hw_simple_aes\hw_simple_aes.lib
+[$LibMap$]
+hw_simple_aes=.
+Active_lib=
+[Settings]
+FLOW_TYPE=HDL
+LANGUAGE=VHDL
+REFRESH_FLOW=1
+FLOWTOOLS=NONE
+FAMILY=
+fileopenfolder=D:\cryptolib\hw_simple_aes\src
+[Files]
+/state_mux.vhd=-1
+/xor2_8.vhd=-1
+/shift_rows.vhd=-1
+/rot_word.vhd=-1
+/add_round_key.vhd=-1
+/mul_4.vhd=-1
+/sbox4.vhd=-1
+/mul_9.vhd=-1
+/inv_sbox4.vhd=-1
+/mul_2.vhd=-1
+/inv_mul_col.vhd=-1
+/mul_col.vhd=-1
+/sub_word.vhd=-1
+/sub_nibbles.vhd=-1
+/mix_columns.vhd=-1
+/inv_sub_nibbles.vhd=-1
+/inv_mix_columns.vhd=-1
+/hw_simple_aes.bde=-1
+/hw_simple_aes_tb.vhd=-1
+/hw_simple_aes_tb_run.do=-1
+[Files.Data]
+.\src\state_mux.vhd=VHDL Source Code
+.\src\xor2_8.vhd=VHDL Source Code
+.\src\shift_rows.vhd=VHDL Source Code
+.\src\rot_word.vhd=VHDL Source Code
+.\src\add_round_key.vhd=VHDL Source Code
+.\src\mul_4.vhd=VHDL Source Code
+.\src\sbox4.vhd=VHDL Source Code
+.\src\mul_9.vhd=VHDL Source Code
+.\src\inv_sbox4.vhd=VHDL Source Code
+.\src\mul_2.vhd=VHDL Source Code
+.\src\inv_mul_col.vhd=VHDL Source Code
+.\src\mul_col.vhd=VHDL Source Code
+.\src\sub_word.vhd=VHDL Source Code
+.\src\sub_nibbles.vhd=VHDL Source Code
+.\src\mix_columns.vhd=VHDL Source Code
+.\src\inv_sub_nibbles.vhd=VHDL Source Code
+.\src\inv_mix_columns.vhd=VHDL Source Code
+.\src\hw_simple_aes.bde=Block Diagram
+.\src\hw_simple_aes_tb.vhd=VHDL Source Code
+.\src\hw_simple_aes_tb_run.do=Macro
+[file_out:/hw_simple_aes.bde]
+/..\compile\hw_simple_aes.vhd=-1
+[HierarchyViewer]
+HierarchyInformation=hw_simple_aes|hw_simple_aes|0 hw_simple_aes_tb|hw_simple_aes_tb_arch|0 inv_mix_columns|inv_mix_columns_arch|0
+ShowHide=ShowTopLevel
+Selected=
